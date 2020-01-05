@@ -16,15 +16,16 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Generate Code Coverage
-        env:
-          CONTEXT_REPO_NAME: ${{ github.event.repository.name }}
-          CONTEXT_HEAD_REF: ${{ github.event.pull_request.head.ref }}
-          CONTEXT_REPO: ${{ github.repository }}
-          CONTEXT_PR_NUMBER: ${{ github.event.pull_request.number }}
-          CONTEXT_BASE_REF: ${{ github.event.pull_request.base.ref }}
-          CONTEXT_PR_BRANCH_LABEL: ${{ github.event.pull_request.head.label }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: make test_in_docker
+      env:
+        CONTEXT_REPO_NAME: ${{ github.event.repository.name }}
+        CONTEXT_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        CONTEXT_REPO: ${{ github.repository }}
+        CONTEXT_PR_NUMBER: ${{ github.event.pull_request.number }}
+        CONTEXT_BASE_REF: ${{ github.event.pull_request.base.ref }}
+        CONTEXT_PR_BRANCH_LABEL: ${{ github.event.pull_request.head.label }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: make test_in_docker
+      
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
       env:
