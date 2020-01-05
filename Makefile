@@ -9,5 +9,6 @@ test:
 
 test_in_docker:
 	echo "[INFO] Running tests from Makefile in docker:"
+	ls
 	docker run --rm -t -v $(pwd):/opt/x4np -w /opt/x4np python:3.6.8 bash -c "ls; make test"
 .PHONY: test_in_docker
