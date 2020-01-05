@@ -5,7 +5,7 @@ test:
 	echo "[INFO] Running tests from Makefile:"
 	pip install --upgrade pip && pip install pipenv
 	pipenv install && pipenv install --deploy --system --dev
-	pytest --cov=x4np --junitxml=test_out.xml
+	pytest --cov=x4np --junitxml=test_out.xml --cov-report term --cov-report xml:test-cov.xml
 .PHONY: test
 
 test_in_docker:
