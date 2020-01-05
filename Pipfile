@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "==4.4.1"
+pytest-cov = "==2.7.1"
+pytest-mock = "==1.10.4"
+pytest-env = "==0.6.2"
+requests-mock = "==1.5.2"
+
+[packages]
+numpy = "===1.16.4"
+
+[requires]
+python_version = "3.6"
