@@ -11,5 +11,5 @@ test:
 test_in_docker:
 	echo "[INFO] Running tests from Makefile [$(TOP)] in docker:"
 	ls
-	docker run --rm -t -v $(TOP):/home/runner/work/x4np -w /home/runner/work/x4np python:3.6.8 make test
+	docker run --rm -t -v $(TOP):/github/workspace -w /github/workspace python:3.6.8 make test
 .PHONY: test_in_docker
